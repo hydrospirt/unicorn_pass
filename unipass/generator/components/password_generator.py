@@ -5,6 +5,7 @@ from django_unicorn.components import UnicornView
 
 class PasswordGeneratorView(UnicornView):
     password: str = ""
+    password_options: list = []
     length: int = 12
     include_digits: bool = True
     include_special_chars: bool = True
@@ -18,6 +19,8 @@ class PasswordGeneratorView(UnicornView):
 
         self.password = "".join(random.choice(
             characters) for _ in range(self.length))
+        self.password_options = ["".join(random.choice(
+            characters) for _ in range(self.length)) for _ in range(10)]
 
-    def copy_to_clipboard(self):
-        self.call("copyToClipboard", self.password)
+    def copy_to_clipboard(self, text):
+        self.call("copyToClipboard", text)
