@@ -1,5 +1,3 @@
-# generator/components/password_generator.py
-
 import random
 import string
 from django_unicorn.components import UnicornView
@@ -20,3 +18,6 @@ class PasswordGeneratorView(UnicornView):
 
         self.password = "".join(random.choice(
             characters) for _ in range(self.length))
+
+    def copy_to_clipboard(self):
+        self.call("copyToClipboard", self.password)
