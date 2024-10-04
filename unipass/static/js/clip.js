@@ -1,20 +1,21 @@
 function copyToClipboard(text) {
     navigator.clipboard.writeText(text).then(function() {
         showNotification("Пароль скопирован в буфер обмена!");
-    }, function(err) {
+    }).catch(function(err) {
         showNotification("Не удалось скопировать пароль: " + err);
     });
 }
 
 function showNotification(message) {
     const notification = document.createElement("div");
-    notification.className = "notification is-success";
+    notification.className = "notification is-success is-light";
     notification.innerHTML = `
         <button class="delete"></button>
         ${message}
     `;
 
-    document.body.appendChild(notification);
+    const notificationContainer = document.getElementById("notification-container");
+    notificationContainer.appendChild(notification);
 
     // Добавляем обработчик для закрытия оповещения
     const deleteButton = notification.querySelector(".delete");
