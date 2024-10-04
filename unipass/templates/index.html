@@ -1,4 +1,5 @@
-{% load static unicorn %}
+{% load static %}
+{% load unicorn %}
 {% unicorn_scripts %}
 <!DOCTYPE html>
 <html lang="ru">
@@ -6,15 +7,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="{% static 'js/clip.js' %}"></script>
+    <script src="{% static 'js/navmenu.js' %}"></script>
     <title>Генератор паролей</title>
 </head>
 <body>
-    <div class="content is-small">
-       <h1>Добро пожаловать в генератор паролей</h1>
-       <i class="fa-brands fa-telegram"></i>
-       {% unicorn 'password_generator' %}
+    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <span class="icon is-large">
+                    <i class="fa-solid fa-key fa-2x"></i>
+                </span>
+                <span class="title is-4 ml-2">RioPass</span>
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                    Главная
+                </a>
+                <a class="navbar-item">
+                    Блог
+                </a>
+                <a class="navbar-item">
+                    Полезные программы
+                </a>
+                <a class="navbar-item">
+                    О проекте
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a class="button is-light">
+                            <strong>Войти</strong>
+                        </a>
+                        <a class="button is-primary">
+                            <strong>Зарегистрироваться</strong>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+     <!-- Второй навигационный бар -->
+     <nav class="navbar is-light" role="navigation" aria-label="secondary navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/sysadmin">
+                <span class="title is-4">Сайт о системном администрировании</span>
+            </a>
+        </div>
+        <div class="navbar-message" id="navbarMessage">
+            Это сайт о системном администрировании
+        </div>
+    </nav>
+
+    <div id="notification-container" class="notification-container"></div>
+    <div class="container">
+        <div class="content">
+            {% unicorn 'password_generator' %}
+        </div>
     </div>
+
+    {% include 'includes/footer.html' %}
 </body>
 </html>
