@@ -14,68 +14,9 @@
     <title>Генератор паролей</title>
 </head>
 <body>
-    <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/">
-                <span class="icon is-large">
-                    <i class="fa-solid fa-key fa-2x"></i>
-                </span>
-                <span class="title is-4 ml-2">RioPass</span>
-            </a>
-
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
-        </div>
-
-        <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
-                <a class="navbar-item">
-                    Главная
-                </a>
-                <a class="navbar-item">
-                    Блог
-                </a>
-                <a class="navbar-item">
-                    Полезные программы
-                </a>
-                <a class="navbar-item">
-                    О проекте
-                </a>
-            </div>
-
-            <div class="navbar-end">
-                <div class="navbar-item">
-                    <div class="buttons">
-                        <a class="button is-light">
-                            <strong>Войти</strong>
-                        </a>
-                        <a class="button is-primary">
-                            <strong>Зарегистрироваться</strong>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
-     <!-- Второй навигационный бар -->
-     <nav class="navbar is-light" role="navigation" aria-label="secondary navigation">
-        <div class="navbar-brand">
-            <a class="navbar-item" href="/sysadmin">
-                <span class="title is-4">Сайт о системном администрировании</span>
-            </a>
-        </div>
-        <div class="navbar-message" id="navbarMessage">
-            Это сайт о системном администрировании
-        </div>
-    </nav>
-
     <div id="notification-container" class="notification-container"></div>
     <div class="container">
-        <div class="content">
+        <div class="content is-small mt-6">
             {% unicorn 'password_generator' %}
         </div>
     </div>
