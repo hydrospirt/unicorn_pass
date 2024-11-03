@@ -34,3 +34,14 @@ body {
 .fa-solid {
     color: white;
 }
+
+#instruction-column {
+    transition: all 0.3s ease;
+}
+
+#toggle-instruction {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+}
