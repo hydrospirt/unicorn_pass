@@ -22,7 +22,9 @@ class PasswordGeneratorView(UnicornView):
         The generated passwords are stored in the `password` and
         `password_options` attributes.
         """
-        characters: str = string.ascii_letters
+        custom_ascii_letters = ''.join(
+            [char for char in string.ascii_letters if char not in ('I', 'l')])
+        characters: str = custom_ascii_letters
         if self.include_digits:
             characters += string.digits
         if self.include_special_chars:
