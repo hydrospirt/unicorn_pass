@@ -2,9 +2,13 @@
 
 ## Description
 
+![unicorn_pass](https://github.com/hydrospirt/unicorn_pass/blob/master/info/scs.gif?raw=true)
+
 This project is a password generator developed using Django and Django Unicorn. Django Unicorn is a framework for creating interactive web applications in Django, which allows you to easily add dynamic elements to your pages without the need to write JavaScript.
 
 ## Key Features
+
+![unicorn_pass_photo](https://github.com/hydrospirt/unicorn_pass/blob/master/info/sc.jpg?raw=true)
 
 - **Password Generation**: Users can generate random passwords with various parameters such as password length, use of digits, letters, and special characters.
 - **Interactivity**: Thanks to Django Unicorn, users can customize the password generation parameters and see the result instantly without page reload.
